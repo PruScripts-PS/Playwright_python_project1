@@ -94,6 +94,18 @@ class contactUs:
         page.wait_for_timeout(5000)
 
 
+
+        self.eccDevArrow1=page.locator('(//i[@class="fa fa-chevron-down text-red-2"])[1]')
+        self.websiteDev=page.locator('//a[@href="https://www.tranktechnologies.com/website-development-company"]')
+
+        self.Android_arrow2=page.locator('(//i[@class="fa fa-chevron-down text-red-2"])[2]')
+        self.androidAppDev=page.locator('//a[@href="https://www.tranktechnologies.com/android-app-development-company"]')
+        self.addDev=page.locator('(//a[@href="https://www.tranktechnologies.com/app-development-company"])[2]')
+
+        self.andoidAppLinks=[self.androidAppDev,self.addDev]
+
+
+
     def fillForm(self):
         self.name.fill("Prutha V")
         self.page.wait_for_timeout(5000)
@@ -143,3 +155,22 @@ class contactUs:
             new_tab = new_page_info.value
             new_tab.wait_for_load_state("load")
             new_tab.close()
+
+
+    def arrowLinksAppDev(self):
+        self.eccDevArrow1.click()
+        #self.self.websiteDev.click()
+        with self.page.context.expect_page() as new_page_info:
+            self.websiteDev.click()
+        new_tab=new_page_info.value
+        new_tab.wait_for_load_state("load")
+        new_tab.close()
+
+    def arrow2_andoidApps(self):
+        self.Android_arrow2.click()
+        for i in self.andoidAppLinks:
+            with self.page.context.expect_page() as new_page_info:
+                 i.click()
+            new_tab=new_page_info.value
+            new_tab.wait_for_load_state("load")
+            new_tab.close() 

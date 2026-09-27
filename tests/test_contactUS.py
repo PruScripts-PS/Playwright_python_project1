@@ -37,3 +37,18 @@ def test_click_graphicLinks(page):
 def test_socialmediapageclick(page):
     socialMediaObj=contactUs(page)
     socialMediaObj.socialmediapageclick()
+
+@pytest.mark.P1
+def test_newArrowAppDev1(page):
+    socialMediaObj=contactUs(page)
+    socialMediaObj.arrowLinksAppDev()
+
+@pytest.mark.P1
+def test_newArrowAndoroidAppDev2(page):
+    socialMediaObj=contactUs(page)
+    socialMediaObj.arrow2_andoidApps()
+
+##pytest test_file.py
+##pytest -m P1
+
+##pytest test_contactUS.py::TestClass
