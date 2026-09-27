@@ -1,1 +1,4 @@
-imageio-ffmpeg
+playwright
+pytest
+pytest-playwright
+pytest-html
